@@ -6,7 +6,7 @@
 
 This project depends on several services that are running inside a docker container, within a docker compose environment. We must pay attention to this small nuance and have [Docker](https://docs.docker.com/desktop/install/mac-install/) installed in our operating system before attempting to execute this command and run this project locally.
 
-there is a bash file that does it partially **start_application.sh**
+there is a bash file that does it all **start_application.sh**
 
 start
 
