@@ -1,0 +1,50 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "predev": "rm -rf dist build dist",
+    "dev": "nodemon",
+    "build": "npx tsc -p .",
+    "postbuild": "copyfiles -u 1 src/**/{*.txt,.env} dist",
+    "start:bootstrap": "node dist/bootstrap/index.js",
+    "start:urls-consumer": "node dist/kafka/consumer/URLs/index.js",
+    "start:htmls-consumer": "node dist/kafka/consumer/HTMLs/index.js",
+    "start:words-consumer": "node dist/kafka/consumer/WORDs/index.js",
+    "start:persistdb-consumer": "node dist/kafka/consumer/PersistDB/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "axios-rate-limit": "^1.3.0",
+    "bottleneck": "^2.19.5",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "kafkajs": "^2.2.4",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.4",
+    "nodejs-snowflake": "^2.0.1",
+    "redis": "^4.6.12",
+    "redis-om": "^0.4.3",
+    "simple-rate-limiter": "^0.5.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "@types/axios": "^0.14.0",
+    "@types/cheerio": "^0.22.35",
+    "@types/dotenv": "^8.2.0",
+    "@types/kafkajs": "^1.9.0",
+    "@types/mongodb": "^4.0.7",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.10.8",
+    "@types/redis": "^4.0.11",
+    "@types/typescript": "^2.0.0",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.0.2",
+    "tsx": "^4.7.0"
+  }
+}
